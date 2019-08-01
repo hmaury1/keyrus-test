@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/main.css">
-  <script src="./bundle.min.js"></script>
+  <script src="./bundle.js"></script>
   <title>Keyrus</title>
 </head>
 
@@ -14,39 +15,60 @@
 
     <div class="container">
       <div class="row mb5">
-        <div class="alert alert-warning alert-dismissible fade mx-auto" role="alert">
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+        <div id="alert-success" class="alert alert-success alert-dismissible fade mx-auto" role="alert">
+          <button id="close-alert-success" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&#10003;</span>
+          </button>
+          <strong>Você foi logado com sucesso</strong>
         </div>
       </div>
-      <div class="row">
+      <div class="row mb5">
+        <div id="alert-danger" class="alert alert-danger alert-dismissible fade mx-auto" role="alert">
+          <button id="close-alert-success" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>Digite seu email e senha</strong>
+        </div>
+      </div>
+      <div class="row mt-5">
         <div class="col-sm-7 col-md-5 col-lg-3 mx-auto">
-          <form class="form-login">
+          <form id="form-login" class="form-login">
             <h5 class="form-login-title text-center mt-4">Entrar na minha conta</h5>
             <div class="form-login-item my-3 mx-auto">
-              <input type="email" class="form-control form-login-item-input" placeholder="Email" autofocus>
+              <input type="email" class="form-control form-login-item-input" placeholder="Email" required autofocus>
+              <i class="fas fa-user"></i>
             </div>
             <div class="form-login-item mb-3 mx-auto">
-              <input type="password" class="form-control form-login-item-input" placeholder="Sanha">
+              <input type="password" class="form-control form-login-item-input" placeholder="Sanha" required>
+              <i class="fas fa-lock"></i>
             </div>
             <div class="form-login-item mb-2 mx-auto text-center">
-              <button id="btn-lets-go" class="form-login-item-button btn btn-primary">Entrar</button>
+              <button id="btn-lets-go" type="button" class="form-login-item-button btn btn-primary">Entrar</button>
             </div>
-            <div class="form-login-checkbox text-center mb-3">
-              <input type="checkbox" class="form-login-checkbox-input">
-              <label class="form-login-checkbox-label" for="customCheck1">Mantenha-me conectado</label>
+            <div class="form-login-checkbox custom-control custom-checkbox text-center mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label form-login-checkbox-label" for="customCheck1">Mantenha-me
+                conectado</label>
             </div>
           </form>
         </div>
       </div>
-      <!-- <div class="row">
-        <div class="col-sm-7 col-md-5 col-lg-3 my-5">
-          <a class="">Inscrever-se</a>
-          <a class="">Clique aqui</a>
+      <div class="row info-1">
+        <div class="col-sm-7 col-md-5 col-lg-3 mt-5 mx-auto text-center">
+            <span>Precisa de uma conta? <a href="#">Inscrever-se</a></span>
         </div>
-      </div> -->
+      </div>
+      <div class="row info-2">
+          <div class="col-sm-7 col-md-5 col-lg-3 mt-2 mx-auto text-center">
+              <span>Esqueceu sua senha? <a href="#">Clique aqui.</a></span>
+          </div>
+        </div>
+        <div class="row info-3">
+            <div class="info-box mt-5 mx-auto">
+              <div class="info-icon" aria-hidden="true">i</div>
+              <i>Keyrus</i>
+            </div>
+          </div>
     </div>
   </div>
 

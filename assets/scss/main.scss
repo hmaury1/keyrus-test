@@ -2,6 +2,7 @@
   'partials/bs',
   '../../node_modules/bootstrap/scss/bootstrap';
 
+  /* VARIABLES */
   $major-grid-size: 30px;
   $major-grid-color: rgb(250, 250, 250);
   $major-grid-weight: 1px; 
@@ -9,6 +10,22 @@
   $minor-grid-size: 30px;
   $minor-grid-color: #f8f8f8;
   $minor-grid-weight: 1px; 
+
+  /* MIXINS */
+  @mixin  alert-shared {
+    height: 47px;
+    width: 700px;
+    padding-left: 4rem;
+    border-radius: 8px;
+    box-shadow: 0 0 7px rgba(30,28,28,0.19);
+    text-align: right;
+
+    .close {
+      left: 0;
+      line-height: 0.75;
+    }
+  }
+
 
   body {
     height: 100vh;
@@ -34,6 +51,20 @@
       repeating-linear-gradient(0deg, $minor-grid-color, $minor-grid-color $minor-grid-weight, transparent $minor-grid-weight, transparent $minor-grid-size),
       repeating-linear-gradient(-90deg, $minor-grid-color, $minor-grid-color $minor-grid-weight, transparent $minor-grid-weight, transparent $minor-grid-size);
     background-position: 15px 0;
+  }
+
+  .alert-success {
+    @include alert-shared;
+    
+    background-image: linear-gradient(0deg, #57db96 0%, #66e0a3 100%);
+    border: 1px solid #49cf8b
+  }
+
+  .alert-danger {
+    @include alert-shared;
+    
+    background-image: linear-gradient(0deg, #ed6d6d 0%, #ef7b7b 100%);
+    border: 1px solid #db5252;
   }
 
   .form-login {
@@ -64,6 +95,20 @@
           background-color: #f7f6f6;
         }
 
+        i.fas {
+          color: #e0e0e0;
+          position: absolute;
+          right: 75px;
+
+          &.fa-user {
+            top: 71px;
+          }
+
+          &.fa-lock {
+            top: 122px;
+          }
+        }
+
         .form-login-item-button {
           width: 114px;
           text-align: center;
@@ -80,9 +125,57 @@
         }
 
         .form-login-checkbox-label {
+          padding-top: 2px;
           font-size: 12px;
           color: #939797;
         }
       }
   }
+
+  .info-1 {
+    div {
+      span {
+          font-size: 14px;
+          color: #787878;
+          text-decoration: underline;
+          font-weight: bold;
+      }
+    }
+  }
+
+  .info-2 {
+    div {
+      span {
+        font-size: 11px;
+        color: #797979;
+        box-shadow: 0.616px 0.788px 0px #ffffff;
+      }
+    }
+  }
+
+  .info-3 {
+    .info-box {
+      width: 500px;
+      height: 26px;
+      box-shadow: 0.616px 0.788px 0px rgba(0,0,0,0.09);
+      background-color: #ffffff;
+      font-size: 12px;
+      color: #969696;
+      text-align: center;
+    
+      .info-icon {
+        position: absolute;
+        width: 29px;
+        height: 26px;
+        box-shadow: 0.616px 0.788px 0px #ffffff;
+        background-color: #969696;
+        font-size: 18px;
+        color: #fffefe;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0.616px 0.788px 0px rgba(30,28,28,0.14);
+      }
+    }
+  }
+
 
