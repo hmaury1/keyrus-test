@@ -1,6 +1,7 @@
 # keyrus-test
 ## by Humberto Maury 
-### 2019
+
+## Getting Started
 
 1. Make sure you've installed recent versions of Node.js in your machine. To test your machine versions, execute node -v and npm -v.
 
