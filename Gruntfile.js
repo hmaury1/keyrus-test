@@ -23,6 +23,21 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		uglify: {
+		options: {
+			banner: '/*! Grunt Uglify <%= grunt.template.today("yyyy-mm-dd") %> */ '
+		},
+			build: {
+				src: 'bundle.js',
+				dest: 'bundle.min.js'
+			}
+		},
+		browserify: {
+			build: {
+				src: 'index.js',
+				dest: 'bundle.js'
+			}
+		},
 		watch: {
 			scripts: {
 				files: ['*.html', 'assets/scss/**/*.scss'],
@@ -31,8 +46,12 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 			},
-		},
+		}
 	});
+
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+  
+  	grunt.loadNpmTasks('grunt-browserify');
 	
-	grunt.registerTask('default', ['sass', 'connect', 'watch']);
+	grunt.registerTask('default', ['sass','browserify', 'uglify', 'connect', 'watch']);
 };
